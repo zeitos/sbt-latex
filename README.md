@@ -8,7 +8,8 @@ Features:
 To use:
   * Make sure `pdflatex` and `bibtex` are installed, as well as any LaTeX libraries you may want.
     * In Ubuntu, you can install everything with `sudo apt-get install texlive-full`.
-  * Add the command `addSbtPlugin("emchristiansen" % "sbt-latex" % "0.1.2")` to `project/plugins.sbt`.
+  * for scala 2.9 use emchristiansen's version
+  * Add the command `addSbtPlugin("zeitos" % "sbt-latex" % "0.1.2")` to `project/plugins.sbt`.
   * Expected file locations:
     * Place your main `.tex` source in `src/main/latex/`.
     * Place resources, like `.bib` files and figures, in `src/main/resources/`.
@@ -16,6 +17,6 @@ To use:
 
 You can also use the [giter8 template](https://github.com/emchristiansen/sbt-latex.g8) to auto-generate a LaTeX project.
 
-License: Public domain / I don't care / [CC0](http://creativecommons.org/publicdomain/zero/1.0/).
+License: Public domain 
 
 

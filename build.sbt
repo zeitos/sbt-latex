@@ -1,15 +1,19 @@
+import bintray.Keys._
+
 name := "sbt-latex"
 
-organization := "emchristiansen"
+organization := "zeitos"
 
 version := "0.1.2"
 
+scalaVersion := "2.10.4"
+
 description := "SBT plugin to build LaTeX projects."
 
-licenses := Seq("Public domain / CC0" -> 
+licenses := Seq("Public domain / ZeoS" -> 
   url("http://creativecommons.org/publicdomain/zero/1.0/"))
 
-homepage := Some(url("https://github.com/emchristiansen/sbt-latex"))
+homepage := Some(url("https://github.com/zeitos/sbt-latex"))
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -18,16 +22,10 @@ sbtPlugin := true
 scalacOptions := Seq("-deprecation", "-unchecked", "-optimize")
 
 ////////////////////////////////////////////////////////////////////////////////
-
-publishTo <<= (version) { version: String =>
-   val scalasbt = "http://repo.scala-sbt.org/scalasbt/"
-   val (name, url) = if (version.contains("-SNAPSHOT"))
-     ("sbt-plugin-snapshots", scalasbt+"sbt-plugin-snapshots")
-   else
-     ("sbt-plugin-releases", scalasbt+"sbt-plugin-releases")
-   Some(Resolver.url(name, new URL(url))(Resolver.ivyStylePatterns))
-}
+//settings := commonSettings ++ bintrayPublishSettings: _*
 
 publishMavenStyle := false
+repository in bintray := "sbt-plugins"
+bintrayOrganization in bintray := None
 
 credentials += Credentials(Path.userHome / ".ivy2" / "sbtcredentials")

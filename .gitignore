@@ -1,0 +1,10 @@
+target/
+.idea/
+.idea_modules/
+.project
+.classpath
+*.iml
+*.sublime-workspace
+node_modules/
+dist/
+.DS_Store
